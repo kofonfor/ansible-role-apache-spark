@@ -1,0 +1,5 @@
+- name: download Spark
+  get_url: url="http://apache-mirror.rbc.ru/pub/apache/spark/spark-{{ spark_version }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz" dest=/root/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz
+
+- name: unpack Spark
+  unarchive: copy=no src="/root/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz" dest={{ spark_unarchive_prefix }}
